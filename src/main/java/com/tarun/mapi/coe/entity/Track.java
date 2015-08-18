@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.datastax.driver.mapping.annotations.Column;
+import com.datastax.driver.mapping.annotations.Field;
 import com.datastax.driver.mapping.annotations.Transient;
 import com.datastax.driver.mapping.annotations.UDT;
 
@@ -15,7 +15,7 @@ public class Track {
 	
 	private String location;
 	private String zone;
-	@Column(name = "update_date")
+	@Field(name = "update_date")
 	private Date updateDate;
 	private String remarks;
 	

@@ -3,6 +3,7 @@ package com.tarun.mapi.coe.entity;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -16,9 +17,7 @@ import com.google.common.base.Objects;
 
 
 @Table(name = "shipment_track")
-public class ShipmentTrack {
-
-	
+public class ShipmentTrack {	
 	
 	@PartitionKey
 	@Column(name = "waybill_no")
@@ -28,9 +27,10 @@ public class ShipmentTrack {
 	private Address sourceAddress;
 	@Frozen
 	@Column(name = "destination_address")
-	private Address destinationAddress;	
+	private Address destinationAddress;
+	@Frozen("list<frozen<Track>>")
 	@Column(name = "route_path")
-	private Map<String, Track> routPath;
+	private List<Track> routPath;
 	
 
 	public UUID getWaybillNo() {
@@ -58,11 +58,11 @@ public class ShipmentTrack {
 	}
 
 	
-	public Map<String, Track> getRoutPath() {
+	public List<Track> getRoutPath() {
 		return routPath;
 	}
 
-	public void setRoutPath(Map<String, Track> routPath) {
+	public void setRoutPath(List<Track> routPath) {
 		this.routPath = routPath;
 	}
 

@@ -7,7 +7,7 @@ import com.tarun.mapi.coe.entity.ShipmentTrack;
 
 public interface ShipmentTrackRepository {
 
-	List<ShipmentTrack> getShipmentTrack(UUID waybillNo);
+	ShipmentTrack getShipmentTrack(UUID waybillNo);
 	ShipmentTrack getOneShipmentTrack(UUID waybillNo);
 	void addNewTrack(ShipmentTrack shipmentTrack);
 	

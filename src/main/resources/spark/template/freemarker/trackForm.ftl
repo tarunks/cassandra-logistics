@@ -24,7 +24,7 @@
 	<div class="form-group">
 		<label class="col-sm-3 control-label" for="remarks">Remarks:</label>
 		<div class="col-sm-5">
-			<textarea class="form-control" name='remarks' id="remarks" rows='4' cols='5' form='consignment-create-form' placeholder="Enter any remarks"></textarea>
+			<textarea class="form-control" name="remarks" id="remarks" rows='4' cols='5' form='consignment-create-form' placeholder="Enter any remarks"></textarea>
 		</div>
 	</div>
  <input type="hidden" id="waybillno" name="waybillno" value="${waybillno}" />

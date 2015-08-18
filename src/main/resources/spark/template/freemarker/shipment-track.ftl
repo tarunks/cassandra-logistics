@@ -54,8 +54,8 @@
  <tbody>
  <#list tracklist as track >
   <tr>  
-    <td>${track.getCurrentZoneId()}</td>
-    <td>${track.getCurrentLocationId()}</td>
+    <td>${track.getZone()}</td>
+    <td>${track.getLocation()}</td>
     <td>${track.getFormatedUpdateDate()}</td>
   </tr>  
  </#list>

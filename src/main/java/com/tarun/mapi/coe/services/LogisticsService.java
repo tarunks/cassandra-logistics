@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.tarun.mapi.coe.entity.ShipmentDetail;
 import com.tarun.mapi.coe.entity.ShipmentTrack;
+import com.tarun.mapi.coe.entity.Track;
 
 public interface LogisticsService {
 
@@ -13,7 +14,7 @@ public interface LogisticsService {
 	ShipmentDetail addNewConsignment(ShipmentDetail shipmentDetail);
 	void updateConsignment(UUID waybillNo,ShipmentDetail shipmentDetail);
 	
-	List<ShipmentTrack> getShipmentTrackDetails(UUID waybillNo);
-	void addNewTrack(ShipmentTrack shipmentTrack);
+	ShipmentTrack getShipmentTrackDetails(UUID waybillNo);
+	void addNewTrack(UUID waybillNo,Track track);
 	
 }

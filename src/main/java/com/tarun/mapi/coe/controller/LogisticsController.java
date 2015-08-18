@@ -12,6 +12,7 @@ import java.util.UUID;
 import com.tarun.mapi.coe.entity.Address;
 import com.tarun.mapi.coe.entity.ShipmentDetail;
 import com.tarun.mapi.coe.entity.ShipmentTrack;
+import com.tarun.mapi.coe.entity.Track;
 import com.tarun.mapi.coe.services.LogisticsService;
 
 import spark.ModelAndView;
@@ -47,21 +48,20 @@ public class LogisticsController {
 					attributes.put("templateName", "shipment.ftl");
 					return new ModelAndView(attributes, "home.ftl");
 				}, new FreeMarkerEngine());
-		
-		
-		get("/shiment/detail/:waybillno", (req, res) -> {
 
-			Map<String, Object> attributes = new HashMap<String, Object>();
-			
-			String strWaybill=req.params(":waybillno");
-			logger.info("============Waybill no==" + strWaybill);
-			ShipmentDetail shipment= logisticsService.getShipmentDetails(UUID.fromString(strWaybill));
-			attributes.put("shipment", shipment);
-			attributes.put("templateName", "shipment-detail.ftl");
-			return new ModelAndView(attributes, "home.ftl");
-		}, new FreeMarkerEngine());
-		
-		
+		get("/shiment/detail/:waybillno",
+				(req, res) -> {
+
+					Map<String, Object> attributes = new HashMap<String, Object>();
+
+					String strWaybill = req.params(":waybillno");
+					logger.info("============Waybill no==" + strWaybill);
+					ShipmentDetail shipment = logisticsService
+							.getShipmentDetails(UUID.fromString(strWaybill));
+					attributes.put("shipment", shipment);
+					attributes.put("templateName", "shipment-detail.ftl");
+					return new ModelAndView(attributes, "home.ftl");
+				}, new FreeMarkerEngine());
 
 		get("/shipment/create", (req, res) -> {
 
@@ -73,7 +73,7 @@ public class LogisticsController {
 
 		post("/shipment/create", (req, res) -> {
 			ShipmentDetail shipmentDetail = new ShipmentDetail();
-			
+
 			String senderName = req.queryParams("txtSenderName");
 			String street = req.queryParams("txtStreet");
 			String city = req.queryParams("txtCity");
@@ -114,56 +114,57 @@ public class LogisticsController {
 
 			logger.info(shipmentDetail.toString());
 			logisticsService.addNewConsignment(shipmentDetail);
-			
+
 			res.status(201);
 			res.redirect("/");
 			return "";
 		});
-		get("/track/update/:waybillno", (req,res) -> {
+		get("/track/update/:waybillno", (req, res) -> {
 			Map<String, Object> attributes = new HashMap<String, Object>();
-			
-			String strWaybill=req.params(":waybillno");
+
+			String strWaybill = req.params(":waybillno");
 			logger.info("============Waybill no==" + strWaybill);
 			attributes.put("waybillno", strWaybill);
 			attributes.put("templateName", "trackForm.ftl");
 			return new ModelAndView(attributes, "home.ftl");
 		}, new FreeMarkerEngine());
-		
+
 		post("/track/update/", (req, res) -> {
-		
+
 			String waybillno = req.queryParams("waybillno");
 			String currentZone = req.queryParams("currentZone");
 			String currentLocation = req.queryParams("currentLocation");
 			String remarks = req.queryParams("remarks");
-			ShipmentTrack shipmentTrack=new ShipmentTrack();
+			Track track = new Track();
 			logger.info("*********===Waybill number:===*********" + waybillno);
-			shipmentTrack.setWaybillNo(UUID.fromString(waybillno));
-			shipmentTrack.setCurrentLocationId(currentLocation);
-			shipmentTrack.setCurrentZoneId(currentZone);
-			shipmentTrack.setRemarks(remarks);
+
+			track.setLocation(currentLocation);
+			track.setZone(currentZone);
+			track.setRemarks(remarks);
 			
-			logisticsService.addNewTrack(shipmentTrack);
+			logisticsService.addNewTrack( UUID.fromString(waybillno), track);
 			res.status(201);
-			res.redirect("/shipment/track/"+waybillno);
+			res.redirect("/shipment/track/" + waybillno);
 			return "";
 		});
-		
-		
-		get("shipment/track/:waybillno", (req, res) -> {
 
-			Map<String, Object> attributes = new HashMap<String, Object>();
-			String waybillNo=req.params(":waybillno");
-			logger.info("============Waybill number:===" + waybillNo);
-			List<ShipmentTrack> tracklist=logisticsService.getShipmentTrackDetails(UUID.fromString(waybillNo));
-			if(tracklist!=null || tracklist.size()>0){
-				ShipmentTrack shipment=tracklist.get(0);
-				attributes.put("shipment", shipment);
-				attributes.put("tracklist", tracklist);
-			}
-			
-			attributes.put("templateName", "shipment-track.ftl");
-			return new ModelAndView(attributes, "home.ftl");
-		}, new FreeMarkerEngine());	
+		get("shipment/track/:waybillno",
+				(req, res) -> {
+
+					Map<String, Object> attributes = new HashMap<String, Object>();
+					String waybillNo = req.params(":waybillno");
+					logger.info("============Waybill number:===" + waybillNo);
+					ShipmentTrack track = logisticsService
+							.getShipmentTrackDetails(UUID.fromString(waybillNo));
+					if (track != null ) {
+						
+						attributes.put("shipment", track);
+						attributes.put("tracklist", track.getRoutPath());
+					}
+
+					attributes.put("templateName", "shipment-track.ftl");
+					return new ModelAndView(attributes, "home.ftl");
+				}, new FreeMarkerEngine());
 	}
 
 }
