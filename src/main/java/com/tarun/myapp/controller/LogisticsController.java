@@ -1,4 +1,4 @@
-package com.tarun.mapi.coe.controller;
+package com.tarun.myapp.controller;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import com.tarun.mapi.coe.entity.Address;
-import com.tarun.mapi.coe.entity.ShipmentDetail;
-import com.tarun.mapi.coe.entity.ShipmentTrack;
-import com.tarun.mapi.coe.entity.Track;
-import com.tarun.mapi.coe.services.LogisticsService;
+import com.tarun.myapp.entity.Address;
+import com.tarun.myapp.entity.ShipmentDetail;
+import com.tarun.myapp.entity.ShipmentTrack;
+import com.tarun.myapp.entity.Track;
+import com.tarun.myapp.services.LogisticsService;
 
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;

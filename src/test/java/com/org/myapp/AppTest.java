@@ -1,4 +1,4 @@
-package com.hcl.mapi.coe;
+package com.org.myapp;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

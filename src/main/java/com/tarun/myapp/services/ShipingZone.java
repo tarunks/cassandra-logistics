@@ -1,4 +1,4 @@
-package com.tarun.mapi.coe.services;
+package com.tarun.myapp.services;
 
 import java.io.Serializable;
 

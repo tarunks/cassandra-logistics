@@ -1,11 +1,11 @@
-package com.tarun.mapi.coe.services;
+package com.tarun.myapp.services;
 
 import java.util.List;
 import java.util.UUID;
 
-import com.tarun.mapi.coe.entity.ShipmentDetail;
-import com.tarun.mapi.coe.entity.ShipmentTrack;
-import com.tarun.mapi.coe.entity.Track;
+import com.tarun.myapp.entity.ShipmentDetail;
+import com.tarun.myapp.entity.ShipmentTrack;
+import com.tarun.myapp.entity.Track;
 
 public interface LogisticsService {
 

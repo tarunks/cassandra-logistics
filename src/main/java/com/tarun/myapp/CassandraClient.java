@@ -1,4 +1,4 @@
-package com.tarun.mapi.coe;
+package com.tarun.myapp;
 
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Host;

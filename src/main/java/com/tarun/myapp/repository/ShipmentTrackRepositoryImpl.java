@@ -1,4 +1,4 @@
-package com.tarun.mapi.coe.repository;
+package com.tarun.myapp.repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,11 +20,11 @@ import com.datastax.driver.core.UserType;
 import com.datastax.driver.mapping.Mapper;
 import com.datastax.driver.mapping.MappingManager;
 import com.datastax.driver.mapping.UDTMapper;
-import com.tarun.mapi.coe.CassandraClient;
-import com.tarun.mapi.coe.entity.Address;
-import com.tarun.mapi.coe.entity.ShipmentDetail;
-import com.tarun.mapi.coe.entity.ShipmentTrack;
-import com.tarun.mapi.coe.entity.Track;
+import com.tarun.myapp.CassandraClient;
+import com.tarun.myapp.entity.Address;
+import com.tarun.myapp.entity.ShipmentDetail;
+import com.tarun.myapp.entity.ShipmentTrack;
+import com.tarun.myapp.entity.Track;
 
 public class ShipmentTrackRepositoryImpl implements ShipmentTrackRepository {
 

@@ -1,12 +1,12 @@
-package com.tarun.mapi.coe;
+package com.tarun.myapp;
 
-import com.tarun.mapi.coe.controller.*;
-import com.tarun.mapi.coe.repository.ShipmentRepository;
-import com.tarun.mapi.coe.repository.ShipmentRepositoryImpl;
-import com.tarun.mapi.coe.repository.ShipmentTrackRepository;
-import com.tarun.mapi.coe.repository.ShipmentTrackRepositoryImpl;
-import com.tarun.mapi.coe.services.LogisticsService;
-import com.tarun.mapi.coe.services.LogisticsServiceImpl;
+import com.tarun.myapp.controller.*;
+import com.tarun.myapp.repository.ShipmentRepository;
+import com.tarun.myapp.repository.ShipmentRepositoryImpl;
+import com.tarun.myapp.repository.ShipmentTrackRepository;
+import com.tarun.myapp.repository.ShipmentTrackRepositoryImpl;
+import com.tarun.myapp.services.LogisticsService;
+import com.tarun.myapp.services.LogisticsServiceImpl;
 
 public class App {
 	public static void main(String[] args) {

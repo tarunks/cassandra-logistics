@@ -1,4 +1,4 @@
-package com.tarun.mapi.coe.services;
+package com.tarun.myapp.services;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -12,13 +12,13 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tarun.mapi.coe.controller.LogisticsController;
-import com.tarun.mapi.coe.entity.Address;
-import com.tarun.mapi.coe.entity.ShipmentDetail;
-import com.tarun.mapi.coe.entity.ShipmentTrack;
-import com.tarun.mapi.coe.entity.Track;
-import com.tarun.mapi.coe.repository.ShipmentRepository;
-import com.tarun.mapi.coe.repository.ShipmentTrackRepository;
+import com.tarun.myapp.controller.LogisticsController;
+import com.tarun.myapp.entity.Address;
+import com.tarun.myapp.entity.ShipmentDetail;
+import com.tarun.myapp.entity.ShipmentTrack;
+import com.tarun.myapp.entity.Track;
+import com.tarun.myapp.repository.ShipmentRepository;
+import com.tarun.myapp.repository.ShipmentTrackRepository;
 
 enum ShipingStatus {
 	DEP,

@@ -1,4 +1,4 @@
-package com.tarun.mapi.coe.entity;
+package com.tarun.myapp.entity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

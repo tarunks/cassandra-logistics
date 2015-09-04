@@ -1,9 +1,9 @@
-package com.tarun.mapi.coe.repository;
+package com.tarun.myapp.repository;
 
 import java.util.List;
 import java.util.UUID;
 
-import com.tarun.mapi.coe.entity.ShipmentDetail;
+import com.tarun.myapp.entity.ShipmentDetail;
 
 public interface ShipmentRepository {
 

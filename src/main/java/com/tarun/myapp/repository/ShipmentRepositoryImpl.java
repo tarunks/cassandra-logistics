@@ -1,4 +1,4 @@
-package com.tarun.mapi.coe.repository;
+package com.tarun.myapp.repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,10 +21,10 @@ import com.datastax.driver.core.UserType;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 import com.datastax.driver.mapping.MappingManager;
 import com.datastax.driver.mapping.UDTMapper;
-import com.tarun.mapi.coe.CassandraClient;
-import com.tarun.mapi.coe.entity.Address;
-import com.tarun.mapi.coe.entity.ShipmentDetail;
-import com.tarun.mapi.coe.services.LogisticsServiceImpl;
+import com.tarun.myapp.CassandraClient;
+import com.tarun.myapp.entity.Address;
+import com.tarun.myapp.entity.ShipmentDetail;
+import com.tarun.myapp.services.LogisticsServiceImpl;
 
 import static com.datastax.driver.core.querybuilder.QueryBuilder.*;
 
